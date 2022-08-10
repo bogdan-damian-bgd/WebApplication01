@@ -18,13 +18,33 @@ jobs:
       uses: actions/setup-dotnet@v2
       with:
         dotnet-version: 6.0.x
+        
     - name: Restore dependencies
       run: dotnet restore
+      
     - name: Build
       run: dotnet build --no-restore
+      
     - name: Test
       run: dotnet test --no-build --verbosity normal
       
-    - name: dotnet publish
+    - name: Publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: .net-app
+        path: ${{env.DOTNET_ROOT}}/myapp
+      
+
+      
+      
+      
+      
+      
+      
+      
+      
+      
 
