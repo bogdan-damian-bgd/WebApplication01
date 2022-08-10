@@ -1,4 +1,4 @@
-name: .NET 02
+name: .NET 02 (with artifacts upload)
 
 on:
 #  push:
@@ -31,13 +31,17 @@ jobs:
     - name: Publish
       run: dotnet publish -c Release -o ${{env.DOTNET_ROOT}}/myapp
       
-    - name: Upload Artifact
+    - name: Upload Artifact 01
       uses: actions/upload-artifact@v2
       with:
-        name: .net-app
+        name: .net-app_01
         path: ${{env.DOTNET_ROOT}}/myapp
       
-
+    - name: Upload Artifact 02
+      uses: actions/upload-artifact@v2
+      with:
+        name: .net-app_02
+        path: ${{env.DOTNET_ROOT}}/myapp
       
       
       
