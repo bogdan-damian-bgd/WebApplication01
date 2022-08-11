@@ -15,15 +15,15 @@ jobs:
     steps:
     - name: Checkout
       uses: actions/checkout@v3
-    - name: Setup .NET
-      uses: actions/setup-dotnet@v2
-      with:
-        dotnet-version: 6.0.x
+#    - name: Setup .NET
+#      uses: actions/setup-dotnet@v2
+#      with:
+#        dotnet-version: 6.0.x
         
     - name: Install CodeQL
       run: |
         brew update
-        brew install install --cask codeql
+        brew install --cask codeql
         codeql version
       
         
