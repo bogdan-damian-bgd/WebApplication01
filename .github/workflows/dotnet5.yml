@@ -1,0 +1,30 @@
+name: .NET 05 (just macOS brew install)
+
+on:
+#  push:
+#    branches: [ "master" ]
+#  pull_request:
+#    branches: [ "master" ]
+  workflow_dispatch:
+
+jobs:
+  build:
+
+    runs-on: macos-latest
+
+    steps:
+    - name: Checkout
+      uses: actions/checkout@v3
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v2
+      with:
+        dotnet-version: 6.0.x
+        
+    - name: Install CodeQL
+      run: |
+        brew update
+        brew install install --cask codeql
+        codeql version
+      
+        
+  
