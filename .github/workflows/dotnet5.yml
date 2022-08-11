@@ -25,6 +25,7 @@ jobs:
         brew update
         brew install --cask codeql
         codeql version
+        echo "********** CodeQL Installation Finished **********"
       
         
   
