@@ -30,6 +30,9 @@ jobs:
         echo $b1
         c:
         cd\
+        echo "Bla Bla5"
         dir
+        echo "Bla Bla6"
         Install-Script -Name Show-Tree -force
+        echo "Bla Bla7"
         Show-Tree c:\ –depth 2
