@@ -35,4 +35,7 @@ jobs:
         echo "Bla Bla6"
         Install-Script -Name Show-Tree -force
         echo "Bla Bla7"
-        Show-Tree c:\ –depth 2
+        cd image
+        echo "Bla Bla8"
+        dir
+        Show-Tree
