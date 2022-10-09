@@ -28,5 +28,8 @@ jobs:
         echo "Bla Bla3"
         $b1 = "Bla Bla4"
         echo $b1
+        c:
+        cd\
+        dir
         Install-Script -Name Show-Tree -force
         Show-Tree c:\ –depth 2
