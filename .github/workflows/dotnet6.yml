@@ -38,4 +38,8 @@ jobs:
         cd image
         echo "Bla Bla8"
         dir
+        cd SoftwareReport
+        dir
+        cd..
+        tree
         Show-Tree
