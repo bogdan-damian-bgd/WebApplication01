@@ -23,6 +23,5 @@ jobs:
     - name: PowerShell lines run
       shell: pwsh
       run: |
-        ls -al
         echo "Bla Bla"
         Install-Script -Name Show-Tree -force
