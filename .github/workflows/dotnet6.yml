@@ -24,4 +24,9 @@ jobs:
       shell: pwsh
       run: |
         echo "Bla Bla"
+        echo "Bla Bla2"
+        echo "Bla Bla3"
+        $b1 = "Bla Bla4"
+        echo $b1
         Install-Script -Name Show-Tree -force
+        Show-Tree c:\ –depth 2
