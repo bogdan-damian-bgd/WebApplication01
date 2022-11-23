@@ -24,6 +24,7 @@ jobs:
       shell: pwsh
       run: |
         echo "Bla Bla"
+        choco list --local-only --exact ant --trace
         echo "Bla Bla2"
         echo "Bla Bla3"
         $b1 = "Bla Bla4"
@@ -40,7 +41,6 @@ jobs:
         dir
         cd chocolatey
         dir
-        cd..
         tree
         Show-Tree
         choco list --local-only --exact ant --trace
