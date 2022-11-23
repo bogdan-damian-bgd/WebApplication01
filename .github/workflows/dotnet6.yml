@@ -35,11 +35,12 @@ jobs:
         echo "Bla Bla6"
         Install-Script -Name Show-Tree -force
         echo "Bla Bla7"
-        cd image
+        cd ProgramData
         echo "Bla Bla8"
         dir
-        cd SoftwareReport
+        cd chocolatey
         dir
         cd..
         tree
         Show-Tree
+        choco list --local-only --exact ant --trace
