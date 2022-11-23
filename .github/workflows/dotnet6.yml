@@ -24,6 +24,8 @@ jobs:
       shell: pwsh
       run: |
         echo "Bla Bla"
+        echo $env:ANT_HOME
+        echo "##################################################################"
         choco list --local-only --exact ant --trace
         echo "Bla Bla2"
         gci env:* | sort-object name
