@@ -26,6 +26,7 @@ jobs:
         echo "Bla Bla"
         choco list --local-only --exact ant --trace
         echo "Bla Bla2"
+        gci env:* | sort-object name
         echo "Bla Bla3"
         $b1 = "Bla Bla4"
         echo $b1
