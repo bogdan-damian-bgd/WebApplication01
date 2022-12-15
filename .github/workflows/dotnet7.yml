@@ -1,5 +1,6 @@
 name: Docker containter test
-on: push
+on:
+  workflow_dispatch:
 
 jobs:
   node-docker:
