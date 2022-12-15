@@ -1,1 +1,35 @@
-#
+name: Docker containter test 2 (Alex)
+on:
+  workflow_dispatch:
+
+jobs:
+  run_from_container:
+    name: test1
+    runs-on: ubuntu-latest
+    container:
+      image: alpine/git
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: git clone
+        run: | 
+          git clone --depth=1 https://github.com/actions/runner-images
+          ls -la runner-images
+          echo 'Git version check'
+          git --version
+          
+  run_from_runner:
+    name: test2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+        
+      - name: Check the data
+        run: |
+          ls $GITHUB_WORKSPACE
+          echo 'Git version check'
+          git --version
