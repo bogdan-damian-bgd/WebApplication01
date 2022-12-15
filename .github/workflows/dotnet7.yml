@@ -1,4 +1,4 @@
-name: Docker containter test
+name: .NET 07 - Docker containter test
 on:
   workflow_dispatch:
 
