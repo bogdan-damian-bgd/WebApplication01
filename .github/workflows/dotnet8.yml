@@ -1,4 +1,4 @@
-name: Docker containter test 2 (Alex)
+name: .NET08 - Docker containter test 2 (Alex)
 on:
   workflow_dispatch:
 
