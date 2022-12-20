@@ -22,6 +22,6 @@ jobs:
     - name: Restore dependencies
       run: dotnet restore --runtime win-x86
     - name: Build
-      run: dotnet build --runtime win-x86 --no-restore
+      run: dotnet build .\WebApplication01\WebApplication01.csproj --runtime win-x86 --no-restore
     - name: Test
       run: dotnet test --no-build --verbosity normal
