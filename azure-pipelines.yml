@@ -16,6 +16,8 @@ steps:
     versionSpec: 3.7
 
 - bash: |
+    echo "requests" > requirements_tests.txt
+    echo "azure-storage-blob==12.3.2" >> requirements_tests.txt
     pip install -r requirements_tests.txt
   displayName: 'Setup requirements for tests'
 
