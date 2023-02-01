@@ -18,9 +18,9 @@ steps:
   displayName: 'Check ports'
     
 - bash: |
-    sudo npm install -g azurite
-    sudo mkdir azurite
-    sudo azurite --silent --location azurite --debug azurite\debug.log &
+    npm install -g azurite
+    mkdir azurite
+    azurite --silent --location azurite --debug azurite\debug.log &
   displayName: 'Install and Run Azurite'
     
 - script: |
