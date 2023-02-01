@@ -9,26 +9,34 @@ trigger:
 pool:
   vmImage: 'windows-latest'
 
-variables:
-  solution: '**/*.sln'
-  buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
-
 steps:
-- task: NuGetToolInstaller@1
-
-- task: NuGetCommand@2
+- task: UsePythonVersion@0
+  displayName: 'Use Python 3.7'
   inputs:
-    restoreSolution: '$(solution)'
+    versionSpec: 3.7
 
-- task: VSBuild@1
-  inputs:
-    solution: '$(solution)'
-    msbuildArgs: '/p:DeployOnBuild=true /p:WebPublishMethod=Package /p:PackageAsSingleFile=true /p:SkipInvalidConfigurations=true /p:DesktopBuildPackageLocation="$(build.artifactStagingDirectory)\WebApp.zip" /p:DeployIisAppPath="Default Web Site"'
-    platform: 'x86'
-    configuration: '$(buildConfiguration)'
+- bash: |
+    pip install -r requirements_tests.txt
+  displayName: 'Setup requirements for tests'
 
-- task: VSTest@2
+- bash: |
+    sudo npm install -g azurite
+    sudo mkdir azurite
+    sudo azurite --silent --location azurite --debug azurite\debug.log &
+  displayName: 'Install and Run Azurite'
+
+- bash: |
+    python -m pytest --junit-xml=unit_tests_report.xml --cov=tests --cov-report=html --cov-report=xml ./tests
+  displayName: 'Run Tests'
+
+- task: PublishCodeCoverageResults@1
   inputs:
-    platform: '$(buildPlatform)'
-    configuration: '$(buildConfiguration)'
+    codeCoverageTool: Cobertura
+    summaryFileLocation: '$(System.DefaultWorkingDirectory)/**/coverage.xml'
+    reportDirectory: '$(System.DefaultWorkingDirectory)/**/htmlcov'
+
+- task: PublishTestResults@2
+  inputs:
+    testResultsFormat: 'JUnit'
+    testResultsFiles: '**/*_tests_report.xml'
+    failTaskOnFailedTests: true
