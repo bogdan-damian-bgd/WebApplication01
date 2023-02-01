@@ -15,14 +15,16 @@ steps:
     netstat -ano
     echo "#### Check reserved ports:"
     netsh int ip show excludedportrange protocol=tcp
+  displayName: 'Check ports'
     
-- pwsh: |
-    echo "#### Install Azurite"
-    npm install -g azurite
-    echo "#### Start Azurite"
-    azurite -s -l c:\azurite -d c:\azurite\debug.log
+- bash: |
+    sudo npm install -g azurite
+    sudo mkdir azurite
+    sudo azurite --silent --location azurite --debug azurite\debug.log &
+  displayName: 'Install and Run Azurite'
     
 - script: |
     echo "#### Check used ports:"
     netstat -ano
+  displayName: 'Check ports'
     
