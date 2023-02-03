@@ -15,4 +15,5 @@ steps:
      Invoke-Expression -Command $startEmulatorCmd
      Start-Sleep -s 30
      netstat -aob
+     Invoke-WebRequest "https://localhost:8081/_explorer/index.html"
   displayName: 'Check ports'
