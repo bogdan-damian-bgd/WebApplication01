@@ -16,4 +16,4 @@ stages:
         - pwsh: |
           Write-Host "Set-TimeZone: W. Europe Standard Time"
           Set-TimeZone -Name "W. Europe Standard Time"
-        displayName: Set-TimeZone
+        displayName: 'Set-TimeZone'
