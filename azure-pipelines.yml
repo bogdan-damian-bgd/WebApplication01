@@ -1,7 +1,7 @@
 trigger:
 - master
 
-container: test
+container:
   image: mcr.microsoft.com/windows/servercore:1809
 
 stages:
