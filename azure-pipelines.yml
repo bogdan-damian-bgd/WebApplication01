@@ -1,18 +1,24 @@
-trigger:
-- master
+trigger: none
+pr: none
 
-container:
-  image: mcr.microsoft.com/windows/servercore:1809
+pool:
+  vmImage: windows-2019
+
+resources:
+  containers:
+  - container: test
+    image: mcr.microsoft.com/windows/servercore:1809
 
 stages:
-- stage: build
-  displayName: building
+- stage: dev
+  displayName: dev
   jobs:
-    - job:
-      pool:
-        vmImage: 'windows-2019'
-      container: test
-      steps:
-        - pwsh: |
+  - job: abcd
+    displayName: abcd_Name
+    
+    steps:
+      - powershell: |
           Write-Host "Set-TimeZone: W. Europe Standard Time"
           Set-TimeZone -Name "W. Europe Standard Time"
+        displayName: Test123
+    
