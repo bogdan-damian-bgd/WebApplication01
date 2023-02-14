@@ -6,19 +6,19 @@ pool:
 
 resources:
   containers:
-  - container: test
+  - container: Test_Container
     image: mcr.microsoft.com/windows/servercore:1809
 
 stages:
-- stage: dev
-  displayName: dev
+- stage: Test_Build
+  displayName: Test_Building
   jobs:
-  - job: abcd
-    displayName: abcd_Name
+  - job: Test_Job
+    displayName: Test_Job
     
     steps:
       - powershell: |
           Write-Host "Set-TimeZone: W. Europe Standard Time"
           Set-TimeZone -Name "W. Europe Standard Time"
-        displayName: Test123
+        displayName: Set-TimeZone
     
