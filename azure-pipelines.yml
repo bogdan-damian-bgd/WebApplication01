@@ -14,6 +14,5 @@ stages:
       container: test
       steps:
         - pwsh: |
-          Write-Host "Set-TimeZone: W. Europe Standard Time"
-          Set-TimeZone -Name "W. Europe Standard Time"
+          Write-Host Hello
         displayName: 'Set-TimeZone'
