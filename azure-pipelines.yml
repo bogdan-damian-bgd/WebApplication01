@@ -10,7 +10,7 @@ stages:
   jobs:
     - job:
       pool:
-      vmImage: windows-2019
+        vmImage: 'windows-2019'
       container: test
       steps:
         - pwsh: |
