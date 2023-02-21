@@ -5,6 +5,8 @@ pool:
 
 steps:
 - script: |
+    echo "#### npm globals"
+    npm list -g
     echo "#### Test lerna version"
     lerna --version
     echo "#### npm globals"
