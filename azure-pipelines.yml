@@ -21,6 +21,11 @@ steps:
     npm --version
   displayName: 'Tests03'
   
+- script: |
+    echo "#### Uninstall new lerna"
+    npm uninstall -g lerna
+  displayName: 'Uninstall new lerna'
+  
 - task: NodeTool@0
   inputs:
     versionSpec: '10.16.3'
@@ -35,7 +40,12 @@ steps:
     echo "#### Npm version"
     npm --version
   displayName: 'Test03b'
-  
+
+- script: |
+    echo "#### Install old lerna"
+    npm i -g lerna@3.22.1
+  displayName: 'Install old lerna'
+
 - script: |
     echo "#### 01"
     echo "#### 02"
