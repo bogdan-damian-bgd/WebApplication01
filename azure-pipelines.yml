@@ -1,0 +1,14 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'windows-2019'
+
+steps:
+- script: |
+    echo "#### Test lerna version"
+    lerna --version
+    npm list -g
+  displayName: 'Tests'
+  
+  
