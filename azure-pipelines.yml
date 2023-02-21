@@ -30,3 +30,8 @@ steps:
     echo "#### Node version"
     node --version
   displayName: 'Test02b'
+  
+- script: |
+    echo "#### Npm version"
+    npm --version
+  displayName: 'Test03b'
