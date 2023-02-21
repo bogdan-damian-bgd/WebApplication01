@@ -49,6 +49,6 @@ steps:
 - script: |
     echo "#### 01"
     echo "#### 02"
-    echo "#### npm globals"
-    npm list -g
-  displayName: 'Tests01b'
+    echo "#### lerna --version"
+    lerna --version
+  displayName: 'Lerna version'
