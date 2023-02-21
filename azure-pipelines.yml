@@ -11,27 +11,27 @@ steps:
     npm list -g
   displayName: 'Tests01'
   
-  - script: |
+- script: |
     echo "#### Node version"
     node --version
   displayName: 'Tests02'
   
-  - script: |
+- script: |
     echo "#### Npm version"
     npm --version
   displayName: 'Tests03'
   
-  - task: NodeTool@0
+- task: NodeTool@0
   inputs:
     versionSpec: '10.16.3'
   displayName: 'Install Node.js'
   
-   - script: |
+ - script: |
     echo "#### Node version"
     node --version
   displayName: 'Tests02b'
   
-  - script: |
+- script: |
     echo "#### Npm version"
     npm --version
   displayName: 'Tests03b'
