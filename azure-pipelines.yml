@@ -36,7 +36,6 @@ steps:
     npm --version
   displayName: 'Test03b'
   
-steps:
 - script: |
     echo "#### 01"
     echo "#### 02"
