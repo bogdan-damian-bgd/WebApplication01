@@ -9,10 +9,30 @@ steps:
     echo "#### 02"
     echo "#### npm globals"
     npm list -g
-    echo "#### Test lerna version"
-    lerna --version
-    echo "#### npm globals"
-    npm list -g
-  displayName: 'Tests'
+  displayName: 'Tests01'
   
+  - script: |
+    echo "#### Node version"
+    node --version
+  displayName: 'Tests02'
+  
+  - script: |
+    echo "#### Npm version"
+    npm --version
+  displayName: 'Tests03'
+  
+  - task: NodeTool@0
+  inputs:
+    versionSpec: '10.16.3'
+  displayName: 'Install Node.js'
+  
+   - script: |
+    echo "#### Node version"
+    node --version
+  displayName: 'Tests02b'
+  
+  - script: |
+    echo "#### Npm version"
+    npm --version
+  displayName: 'Tests03b'
   
