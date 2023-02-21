@@ -1,5 +1,4 @@
-trigger:
-- master
+trigger: none
 
 pool:
   vmImage: 'windows-2019'
@@ -8,6 +7,7 @@ steps:
 - script: |
     echo "#### Test lerna version"
     lerna --version
+    echo "#### npm globals"
     npm list -g
   displayName: 'Tests'
   
