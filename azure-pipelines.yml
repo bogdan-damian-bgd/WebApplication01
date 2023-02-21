@@ -35,3 +35,11 @@ steps:
     echo "#### Npm version"
     npm --version
   displayName: 'Test03b'
+  
+steps:
+- script: |
+    echo "#### 01"
+    echo "#### 02"
+    echo "#### npm globals"
+    npm list -g
+  displayName: 'Tests01b'
